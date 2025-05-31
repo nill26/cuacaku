@@ -188,5 +188,24 @@
                         </div>
                     </div>
                 <?php endif; ?>
+                
+                 <!-- Footer -->
+                <footer class="text-center mt-5">
+                    <div class="card border-0 bg-light">
+                        <div class="card-body">
+                            <p class="text-muted mb-2">
+                                <i class="bi bi-info-circle"></i>
+                                Data cuaca dari 
+                                <a href="https://openweathermap.org/" target="_blank" class="text-decoration-none">
+                                    OpenWeatherMap <i class="bi bi-box-arrow-up-right"></i>
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+
 
 
