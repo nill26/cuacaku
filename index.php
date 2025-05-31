@@ -188,7 +188,7 @@
                         </div>
                     </div>
                 <?php endif; ?>
-                
+
                  <!-- Footer -->
                 <footer class="text-center mt-5">
                     <div class="card border-0 bg-light">
@@ -206,6 +206,41 @@
             </div>
         </div>
     </div>
+     <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Auto-hide alerts after 7 seconds
+        setTimeout(function() {
+            var alerts = document.querySelectorAll('.alert-dismissible');
+            alerts.forEach(function(alert) {
+                var bsAlert = new bootstrap.Alert(alert);
+                bsAlert.close();
+            });
+        }, 7000);
+
+        // Add loading state to search button
+        document.querySelector('form').addEventListener('submit', function(e) {
+            var btn = this.querySelector('button[type="submit"]');
+            var originalText = btn.innerHTML;
+            btn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Mencari...';
+            btn.disabled = true;
+            
+            // Re-enable button setelah 30 detik (timeout)
+            setTimeout(function() {
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+            }, 30000);
+        });
+
+        // Check if cURL is available (for debugging)
+        <?php if (isset($_GET['debug'])): ?>
+        console.log('cURL Status: <?= $curl_status ?>');
+        console.log('PHP Version: <?= $php_version ?>');
+        <?php endif; ?>
+    </script>
+</body>
+</html>
 
 
 
