@@ -21,7 +21,31 @@ $weather_background_class = "";
 $temperature_class = "";
 $debug_info = "";
 
+function callWeatherAPI($city, $api_key) {
 
+    $api_url = "https://api.openweathermap.org/data/2.5/weather?q=" . urlencode($city) . "&appid=" . $api_key . "&units=metric&lang=id";
+    
+    $curl = curl_init();
+    
+    curl_setopt_array($curl, [
+        CURLOPT_URL => $api_url,
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_TIMEOUT => 30,                
+        CURLOPT_CONNECTTIMEOUT => 10,         
+        CURLOPT_FOLLOWLOCATION => true,       
+        CURLOPT_SSL_VERIFYPEER => true,      
+        CURLOPT_SSL_VERIFYHOST => 2,          
+        CURLOPT_USERAGENT => 'Weather App/1.0 (PHP/' . PHP_VERSION . ')',
+        CURLOPT_HTTPHEADER => [
+            'Accept: application/json',
+            'Content-Type: application/json',
+            'Cache-Control: no-cache'
+        ],
+        CURLOPT_ENCODING => '',             
+        CURLOPT_FRESH_CONNECT => true,        
+        CURLOPT_FORBID_REUSE => true         
+    ]);
+}
 
 ?>
 <!DOCTYPE html>
