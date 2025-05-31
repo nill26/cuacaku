@@ -45,6 +45,22 @@ function callWeatherAPI($city, $api_key) {
         CURLOPT_FRESH_CONNECT => true,        
         CURLOPT_FORBID_REUSE => true         
     ]);
+    $response = curl_exec($curl);
+    
+    $http_code = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+    $curl_error = curl_error($curl);
+    $curl_errno = curl_errno($curl);
+    $total_time = curl_getinfo($curl, CURLINFO_TOTAL_TIME);
+    
+    curl_close($curl);
+    
+    return [
+        'response' => $response,
+        'http_code' => $http_code,
+        'error' => $curl_error,
+        'errno' => $curl_errno,
+        'total_time' => $total_time
+    ];
 }
 
 ?>
