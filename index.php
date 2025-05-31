@@ -85,3 +85,18 @@
                                     </div>
                                 </div>
                             </div>
+                             <!-- Main Weather Info -->
+                            <div class="row align-items-center mb-4">
+                                <div class="col">
+                                    <div class="display-1 fw-light mb-0">
+                                        <?= $temperature ?>°C
+                                    </div>
+                                    <p class="h5 mb-0 opacity-75">
+                                        <?= $weather_description ?>
+                                    </p>
+                                    <small class="opacity-75">
+                                        Terasa seperti <?= $feels_like ?>°C
+                                    </small>
+                                </div>
+                            </div>
+
