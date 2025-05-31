@@ -55,3 +55,11 @@
                         </div>
                     </div>
                 </div>
+                <!-- Error Message -->
+                <?php if ($error_message): ?>
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <i class="bi bi-exclamation-triangle"></i>
+                        <strong>Oops!</strong> <?= $error_message_display ?>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>
+                <?php endif; ?>
