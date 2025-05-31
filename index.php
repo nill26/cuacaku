@@ -42,3 +42,16 @@
                                 </button>
                             </div>
                         </form>
+                        <!-- Quick Search -->
+                        <div class="mt-3 text-center">
+                            <small class="text-muted">Coba cepat:</small>
+                            <form method="POST" class="d-inline">
+                                <button type="submit" name="city" value="Padang" class="btn btn-outline-primary btn-sm mx-1 mt-2">Padang</button>
+                                <button type="submit" name="city" value="Sijunjung" class="btn btn-outline-primary btn-sm mx-1 mt-2">Sijunjung</button>
+                                <button type="submit" name="city" value="Pariaman" class="btn btn-outline-primary btn-sm mx-1 mt-2">Pariaman</button>
+                                <button type="submit" name="city" value="Bandung" class="btn btn-outline-primary btn-sm mx-1 mt-2">Bandung</button>
+                                <button type="submit" name="city" value="Yogyakarta" class="btn btn-outline-primary btn-sm mx-1 mt-2">Yogyakarta</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
