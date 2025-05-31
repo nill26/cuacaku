@@ -81,6 +81,29 @@ function getWeatherIcon($weather_main) {
     
     return isset($icons[$weather_main]) ? $icons[$weather_main] : '🌤️';
 }
+function getTemperatureClass($temp) {
+    if ($temp >= 30) return 'text-danger';
+    if ($temp >= 20) return 'text-warning';
+    if ($temp >= 10) return 'text-info';
+    return 'text-primary';
+}
+
+function getWeatherBackground($weather_main) {
+    $backgrounds = [
+        'Clear' => 'bg-warning',
+        'Clouds' => 'bg-secondary',
+        'Rain' => 'bg-primary',
+        'Drizzle' => 'bg-info',
+        'Thunderstorm' => 'bg-dark',
+        'Snow' => 'bg-light',
+        'Mist' => 'bg-secondary',
+        'Fog' => 'bg-secondary',
+        'Haze' => 'bg-secondary'
+    ];
+    
+    return isset($backgrounds[$weather_main]) ? $backgrounds[$weather_main] : 'bg-primary';
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="id">
