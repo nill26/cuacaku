@@ -1,3 +1,29 @@
+<?php
+$api_key = "9d79e1aa846939848e3c3bc509a72335";
+$weather_data = null;
+$error_message = "";
+
+$city_input_value = "";
+$location_name = "";
+$country_code = "";
+$current_datetime = "";
+$weather_icon = "";
+$temperature = "";
+$weather_description = "";
+$feels_like = "";
+$humidity = "";
+$pressure = "";
+$wind_speed = "";
+$visibility = "";
+$sunrise_time = "";
+$sunset_time = "";
+$weather_background_class = "";
+$temperature_class = "";
+$debug_info = "";
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="id">
 <head>
