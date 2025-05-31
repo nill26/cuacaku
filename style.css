@@ -62,3 +62,33 @@ header h1 {
     pointer-events: none;
     border-radius: 20px;
 }
+
+.weather-icon {
+    animation: float 3s ease-in-out infinite;
+    transform-origin: center;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    33% { transform: translateY(-10px) rotate(1deg); }
+    66% { transform: translateY(5px) rotate(-1deg); }
+}
+
+.input-group-lg .input-group-text {
+    border-radius: 15px 0 0 15px !important;
+    border: 2px solid #667eea;
+    border-right: none;
+}
+
+.input-group-lg .form-control {
+    border: 2px solid #667eea;
+    border-left: none;
+    border-right: none;
+    box-shadow: none;
+    font-weight: 500;
+}
+
+.input-group-lg .form-control:focus {
+    border-color: #764ba2;
+    box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+}
