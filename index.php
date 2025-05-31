@@ -62,7 +62,25 @@ function callWeatherAPI($city, $api_key) {
         'total_time' => $total_time
     ];
 }
+function formatTime($timestamp, $timezone) {
+    return date('H:i', $timestamp + $timezone);
+}
 
+function getWeatherIcon($weather_main) {
+    $icons = [
+        'Clear' => '☀️',
+        'Clouds' => '☁️',
+        'Rain' => '🌧️',
+        'Drizzle' => '🌦️',
+        'Thunderstorm' => '⛈️',
+        'Snow' => '❄️',
+        'Mist' => '🌫️',
+        'Fog' => '🌫️',
+        'Haze' => '🌫️'
+    ];
+    
+    return isset($icons[$weather_main]) ? $icons[$weather_main] : '🌤️';
+}
 ?>
 <!DOCTYPE html>
 <html lang="id">
