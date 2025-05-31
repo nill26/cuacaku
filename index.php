@@ -103,6 +103,41 @@ function getWeatherBackground($weather_main) {
     
     return isset($backgrounds[$weather_main]) ? $backgrounds[$weather_main] : 'bg-primary';
 }
+if ($_POST && isset($_POST['city'])) {
+    $city = trim($_POST['city']);
+    $city_input_value = htmlspecialchars($city);
+    
+    if (!empty($city)) {
+        
+        $api_result = callWeatherAPI($city, $api_key);
+        
+        
+        if ($api_result['response'] === false || !empty($api_result['error'])) {
+            $error_message = "Gagal mengakses API cuaca. ";
+            
+            switch ($api_result['errno']) {
+                case CURLE_COULDNT_CONNECT:
+                    $error_message .= "Tidak dapat terhubung ke server.";
+                    break;
+                case CURLE_OPERATION_TIMEOUTED:
+                    $error_message .= "Request timeout.";
+                    break;
+                case CURLE_SSL_CONNECT_ERROR:
+                    $error_message .= "SSL connection error.";
+                    break;
+                case CURLE_COULDNT_RESOLVE_HOST:
+                    $error_message .= "Tidak dapat resolve hostname.";
+                    break;
+                default:
+                    $error_message .= "Error: " . $api_result['error'];
+            }
+            } elseif ($api_result['http_code'] !== 200) {
+            switch ($api_result['http_code']) {
+                case 404:
+                    $error_message = "Kota tidak ditemukan. Silakan periksa ejaan nama kota.";
+                    break;
+            }
+        }
 
 ?>
 <!DOCTYPE html>
