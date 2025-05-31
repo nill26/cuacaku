@@ -140,4 +140,20 @@
                                 </div>
                                 <?php endif; ?>
                             </div>
+                             <!-- Sunrise & Sunset -->
+                            <div class="row mt-4">
+                                <div class="col-6 text-center">
+                                    <i class="bi bi-sunrise h3"></i>
+                                    <p class="mb-0">Matahari Terbit</p>
+                                    <strong><?= $sunrise_time ?></strong>
+                                </div>
+                                <div class="col-6 text-center">
+                                    <i class="bi bi-sunset h3"></i>
+                                    <p class="mb-0">Matahari Terbenam</p>
+                                    <strong><?= $sunset_time ?></strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php else: ?>
 
