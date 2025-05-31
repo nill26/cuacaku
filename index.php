@@ -178,7 +178,16 @@ if ($_POST && isset($_POST['city'])) {
     $city_input_value = isset($_POST['city']) ? htmlspecialchars($_POST['city']) : '';
 }
 
+date_default_timezone_set('Asia/Jakarta');
+$current_datetime = date('l, d F Y - H:i');
+
+$error_message_display = htmlspecialchars($error_message);
+
+$curl_status = function_exists('curl_init') ? "Available" : "Not Available";
+$php_version = PHP_VERSION;
+
 ?>
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
