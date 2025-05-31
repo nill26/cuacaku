@@ -63,3 +63,25 @@
                         <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
                     </div>
                 <?php endif; ?>
+                <!-- Weather Display -->
+                <?php if ($weather_data): ?>
+                    <div class="card shadow-lg border-0 weather-card <?= $weather_background_class ?> text-white">
+                        <div class="card-body p-4">
+                            <!-- Location Header -->
+                            <div class="row align-items-center mb-4">
+                                <div class="col">
+                                    <h2 class="h3 mb-1">
+                                        <i class="bi bi-geo-alt"></i>
+                                        <?= $location_name ?>, <?= $country_code ?>
+                                    </h2>
+                                    <small class="opacity-75">
+                                        <i class="bi bi-clock"></i>
+                                        <?= $current_datetime ?>
+                                    </small>
+                                </div>
+                                <div class="col-auto">
+                                    <div class="weather-icon display-1">
+                                        <?= $weather_icon ?>
+                                    </div>
+                                </div>
+                            </div>
