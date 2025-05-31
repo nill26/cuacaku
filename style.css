@@ -121,3 +121,62 @@ header h1 {
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
 }
+
+.weather-card .card {
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.weather-card .card:hover {
+    background: rgba(255, 255, 255, 0.3) !important;
+    transform: translateY(-3px);
+}
+
+.alert {
+    border-radius: 15px;
+    border: none;
+    backdrop-filter: blur(10px);
+}
+
+.alert-danger {
+    background: linear-gradient(45deg, rgba(220, 53, 69, 0.9), rgba(255, 107, 107, 0.9));
+    color: white;
+}
+
+.alert-warning {
+    background: linear-gradient(45deg, rgba(255, 193, 7, 0.9), rgba(255, 235, 59, 0.9));
+    color: #856404;
+    border: 1px solid rgba(255, 193, 7, 0.3);
+}
+
+.display-1 {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-weight: 200 !important;
+}
+
+.weather-card .row:last-child {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 1rem;
+    margin-top: 1.5rem !important;
+    backdrop-filter: blur(5px);
+}
+
+.bg-light {
+    background: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.bg-light:hover {
+    background: rgba(255, 255, 255, 0.2) !important;
+    transform: translateY(-2px);
+}
+
+footer .card {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
