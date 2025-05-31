@@ -137,7 +137,46 @@ if ($_POST && isset($_POST['city'])) {
                     $error_message = "Kota tidak ditemukan. Silakan periksa ejaan nama kota.";
                     break;
             }
+        } else {
+            
+            $weather_data = json_decode($api_result['response'], true);
+            
+            if (json_last_error() !== JSON_ERROR_NONE) {
+                $error_message = "Error parsing data cuaca. JSON Error: " . json_last_error_msg();
+                $weather_data = null;
+            } elseif (isset($weather_data['cod']) && $weather_data['cod'] != 200) {
+                $error_message = isset($weather_data['message']) ? 
+                    "API Error: " . ucfirst($weather_data['message']) : 
+                    "Kota tidak ditemukan. Silakan coba lagi.";
+                $weather_data = null;
+            } else {
+                
+                $location_name = htmlspecialchars($weather_data['name']);
+                $country_code = htmlspecialchars($weather_data['sys']['country']);
+                $weather_icon = getWeatherIcon($weather_data['weather'][0]['main']);
+                $temperature = round($weather_data['main']['temp']);
+                $weather_description = ucfirst($weather_data['weather'][0]['description']);
+                $feels_like = round($weather_data['main']['feels_like']);
+                $humidity = $weather_data['main']['humidity'];
+                $pressure = $weather_data['main']['pressure'];
+                $wind_speed = $weather_data['wind']['speed'];
+                $visibility = isset($weather_data['visibility']) ? ($weather_data['visibility'] / 1000) : null;
+                $sunrise_time = formatTime($weather_data['sys']['sunrise'], $weather_data['timezone']);
+                $sunset_time = formatTime($weather_data['sys']['sunset'], $weather_data['timezone']);
+                $weather_background_class = getWeatherBackground($weather_data['weather'][0]['main']);
+                $temperature_class = getTemperatureClass($weather_data['main']['temp']);
+            }
+            
+            if (isset($_GET['debug']) && $weather_data) {
+                $debug_info = "<!-- Debug Info: Request time: " . round($api_result['total_time'], 2) . " seconds -->";
+            }
         }
+        } else {
+        $error_message = "Silakan masukkan nama kota.";
+    }
+} else {
+    $city_input_value = isset($_POST['city']) ? htmlspecialchars($_POST['city']) : '';
+}
 
 ?>
 <!DOCTYPE html>
