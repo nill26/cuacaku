@@ -25,3 +25,20 @@
                     </h1>
                     <p class="lead text-muted">Dapatkan informasi cuaca terkini untuk kota Anda</p>
                 </header>
+                <!-- Form Pencarian -->
+                <div class="card shadow-lg border-0 mb-4">
+                    <div class="card-body p-4">
+                        <form method="POST">
+                            <div class="input-group input-group-lg">
+                                <span class="input-group-text bg-primary text-white">
+                                    <i class="bi bi-search"></i>
+                                </span>
+                                <input type="text" name="city" class="form-control" 
+                                       placeholder="Masukkan nama kota..." 
+                                       value="<?= $city_input_value ?>" 
+                                       required>
+                                <button class="btn btn-primary btn-lg" type="submit">
+                                    <i class="bi bi-arrow-right"></i> Cari
+                                </button>
+                            </div>
+                        </form>
