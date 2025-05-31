@@ -99,4 +99,45 @@
                                     </small>
                                 </div>
                             </div>
+                             <!-- Weather Details -->
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="card bg-white bg-opacity-20 border-0">
+                                        <div class="card-body text-center">
+                                            <i class="bi bi-droplet display-6 mb-2"></i>
+                                            <h6 class="card-title">Kelembaban</h6>
+                                            <p class="card-text h4"><?= $humidity ?>%</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card bg-white bg-opacity-20 border-0">
+                                        <div class="card-body text-center">
+                                            <i class="bi bi-speedometer2 display-6 mb-2"></i>
+                                            <h6 class="card-title">Tekanan</h6>
+                                            <p class="card-text h4"><?= $pressure ?> hPa</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card bg-white bg-opacity-20 border-0">
+                                        <div class="card-body text-center">
+                                            <i class="bi bi-wind display-6 mb-2"></i>
+                                            <h6 class="card-title">Kecepatan Angin</h6>
+                                            <p class="card-text h4"><?= $wind_speed ?> m/s</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <?php if ($visibility !== null): ?>
+                                <div class="col-md-6">
+                                    <div class="card bg-white bg-opacity-20 border-0">
+                                        <div class="card-body text-center">
+                                            <i class="bi bi-eye display-6 mb-2"></i>
+                                            <h6 class="card-title">Jarak Pandang</h6>
+                                            <p class="card-text h4"><?= $visibility ?> km</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <?php endif; ?>
+                            </div>
 
