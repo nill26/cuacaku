@@ -13,3 +13,15 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <?= $debug_info ?>
+    
+    <div class="container my-5">
+        <!-- Header -->
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <header class="text-center mb-5">
+                    <h1 class="display-4 fw-bold text-primary mb-3">
+                        <i class="bi bi-cloud-sun"></i> Cuacaku
+                    </h1>
+                    <p class="lead text-muted">Dapatkan informasi cuaca terkini untuk kota Anda</p>
+                </header>
