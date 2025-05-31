@@ -92,3 +92,32 @@ header h1 {
     border-color: #764ba2;
     box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
 }
+.input-group-lg .btn {
+    border-radius: 0 15px 15px 0 !important;
+    border: 2px solid #667eea;
+    border-left: none;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.input-group-lg .btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+
+.btn-outline-primary {
+    border-color: #667eea;
+    color: #667eea;
+    font-weight: 500;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    border-color: transparent;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
