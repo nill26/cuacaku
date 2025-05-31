@@ -156,4 +156,37 @@
                         </div>
                     </div>
                 <?php else: ?>
+                    <!-- Welcome Card -->
+                    <div class="card shadow-lg border-0">
+                        <div class="card-body text-center p-5">
+                            <i class="bi bi-cloud-sun display-1 text-primary mb-4"></i>
+                            <h3 class="h4 mb-3">Selamat datang di Cuacaku!</h3>
+                            <p class="text-muted mb-4">
+                                Masukkan nama kota di atas untuk melihat informasi cuaca terkini.
+                                Anda juga dapat menggunakan tombol cepat untuk kota-kota populer.
+                            </p>
+                            <div class="row g-3">
+                                <div class="col-md-4">
+                                    <div class="p-3 bg-light rounded">
+                                        <i class="bi bi-thermometer-half text-danger h4"></i>
+                                        <p class="mb-0 small">Suhu Real-time</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="p-3 bg-light rounded">
+                                        <i class="bi bi-droplet text-info h4"></i>
+                                        <p class="mb-0 small">Kelembaban & Tekanan</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="p-3 bg-light rounded">
+                                        <i class="bi bi-wind text-primary h4"></i>
+                                        <p class="mb-0 small">Kondisi Angin</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php endif; ?>
+
 
